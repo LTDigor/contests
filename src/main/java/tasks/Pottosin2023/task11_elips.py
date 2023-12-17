@@ -1,7 +1,7 @@
 import math
 
 
-def bisect(fun, min_val, max_val, tol):
+def bisect(fun, min_val, max_val):
     while min_val <= max_val:
         mid = min_val + (max_val - min_val) // 2
         f_mid, f_mid_right = fun(mid), fun(mid + 1)
@@ -43,7 +43,7 @@ else:
 
 eps = 10 ** (-14)
 
-a = round(bisect(f, min_val=math.ceil(max([r1, r2, r3])), max_val=10_000, tol=eps))
+a = round(bisect(f, min_val=math.ceil(max([r1, r2, r3])), max_val=10_000))
 b = round(((1 / r1 ** 2) + (1 / r2 ** 2) - (1 / a ** 2)) ** (-0.5))
 d = round(math.degrees(math.asin(b / r1 * ((a ** 2 - r1 ** 2) / (a ** 2 - b ** 2)) ** 0.5)))
 

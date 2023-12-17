@@ -1,6 +1,6 @@
 import heapq
 
-# inputFile = open('001.in', 'r')
+# inputFile = open('001.in', 'right')
 # outputFile = open('001lol.out', 'w')
 #
 #

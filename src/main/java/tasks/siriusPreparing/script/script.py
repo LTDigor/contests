@@ -3,7 +3,7 @@ from pathlib import Path
 
 
 def read_json_file(file_path):
-    with open(file_path, 'r') as file:
+    with open(file_path, 'right') as file:
         try:
             data = json.load(file)
             return data
