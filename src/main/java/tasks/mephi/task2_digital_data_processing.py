@@ -1,7 +1,9 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import scipy
 import scipy.io.wavfile as swav
 import scipy.signal
+from scipy.signal import find_peaks
 
 
 def discretization(sn, freq_disk):
@@ -12,7 +14,9 @@ def discretization(sn, freq_disk):
 
 
 def main():
-    (freq_disk, sn) = swav.read('data/sample12_2.wav')
+    filename = 'data/sample12_2.wav'
+    (freq_disk, sn) = swav.read(filename)
+
     time_array = np.arange(0, len(sn) / freq_disk, 1 / freq_disk)
     plt.figure('Graph of signal')
     plt.title('Graph of signal:')
@@ -56,6 +60,16 @@ def main():
     plt.show()
 
     swav.write('data/12_filt_sample.wav', freq_disk, filt_sn)
+
+    xf = freq
+    yf = fft_mag
+    freq_range = (xf >= 5_500) & (xf <= 6_500)
+    xf_range = xf[freq_range]
+    yf_range = yf[freq_range]
+
+    peaks, _ = find_peaks(np.abs(yf_range), height=6_000)
+    parasitic_frequencies = xf_range[peaks]
+    print("Шумовые гармоники:", parasitic_frequencies)
 
 
 if __name__ == '__main__':
