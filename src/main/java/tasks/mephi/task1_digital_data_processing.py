@@ -26,7 +26,6 @@ carrier_freq = 43_500
 t = np.arange(0, len(data)) / samplerate
 demodulated_signal = data * np.cos(2 * np.pi * carrier_freq * t)
 
-
 cutoff_freq = 18000
 nyquist = 0.5 * samplerate
 normal_cutoff = cutoff_freq / nyquist
@@ -40,3 +39,17 @@ right_channel = (add_signal - diff_signal * 2) / 2
 
 wav.write('data/12_ch1.wav', samplerate, left_channel)
 wav.write('data/12_ch2.wav', samplerate, right_channel)
+
+plt.plot(freq, spectrum)
+plt.xlabel('Частота (Гц)')
+plt.ylabel('Спектр')
+plt.title('Спектр композитного сигнала')
+plt.grid()
+plt.xlim(0, 150)
+plt.ylim(-150, 150)
+plt.show()
+
+freq_med_ind = len(freq) // 2
+delta = 10
+dc_component = np.abs(np.average(spectrum[freq_med_ind - delta:freq_med_ind + delta]))
+print(dc_component)

@@ -1,4 +1,4 @@
-package tasks.YandexSiriusFlutter;
+package tasks.YandexSiriusFlutter2023;
 
 import java.util.Scanner;
 

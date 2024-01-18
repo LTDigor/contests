@@ -1,0 +1,122 @@
+
+curl --location 'https://strp-message-send.strp-message-send.internal.ya-ruc1-dev1.dev.k8s.tcsbank.ru/receive/message' \
+--header 'authority: strp-message-send.strp-message-send.internal.ya-ruc1-dev1.dev.k8s.tcsbank.ru' \
+--header 'accept: */*' \
+--header 'accept-language: en-GB,en;q=0.9,ru;q=0.8' \
+--header 'cache-control: no-cache' \
+--header 'content-type: application/x-www-form-urlencoded;charset=UTF-8' \
+--header 'cookie: stDeIdU=bcde63b5-d695-4320-a41a-517190e99873; dsp_click_id=no%20dsp_click_id; dmp_id=no%20dmp_id; ta_uid=1689690413053995105; pageLanding=https%3A%2F%2Fqa2.forma.tcsbank.ru%2Fadmin; AMCVS_A002FFD3544F6F0A0A4C98A5%40AdobeOrg=1; s_sq=tcsbroker%3D%2526c.%2526a.%2526activitymap.%2526page%253Dhttps%25253A%25252F%25252Fqa2.forma.tcsbank.ru%25252Fplatform%25252Fapplications%2526link%253D%2525D0%25259F%2525D0%2525B5%2525D1%252580%2525D0%2525B5%2525D0%2525B7%2525D0%2525B0%2525D0%2525B9%2525D1%252582%2525D0%2525B8%2526region%253Dapplication%2526.activitymap%2526.a%2526.c; sessionid=CMuA5HVLAXG%2FilBc7aX%2BwztS2IubnXbdttNZyq5%2FhxzaLj8j1jORGOzyp5HmWzfY0X9rRHoxF2U1ge%2B0qoJBaH9YBdu508wxHdTla5KKKbS1B%2FdbgM2U38MC1ACEyNQ8v2QH7l0bVNUSGs56Y0IhDMeBVqhkPcA93WBi6zn%2Bfhj89aP8nY6gxLalcgUpJTzxp%2FmuqY6%2FiXn97BEHKp6DqXCh3wPAYLvM4nOGkuU%2BGG3IO0horS%2Bfmvhc5%2BJUcZUQ7BmdQRJL%2BYThHabUm7Bn7sYRqfFKQyJMCVt1lEvj9HLShqSmSsP3DR26bjNRWeIkw6ajXMRaFENep04mKjh59Q%3D%3D; wbuser=v.d.olennikov; ta_nr=return; utm_source=id-qa.tcsbank.ru; utm_date_set=1690972512266; __P__wuid=ba1bb43f1b0943d4a823990633a07832; amp_c26911=OQX3yfsAyYPNDSA8HPsNOV.NDQ4ZTdmZmItM2IxZS00MmE1LTg1NzMtMWFmZDk2M2I3YmFi..1h8trkbs7.1h8trkcos.4a.35.7f; idsrv.login-id=Ki-xLhH2YoDEo_bLs_AW; idsrv.time=1695132615; idsrv.uid=448e7ffb-3b1e-42a5-8573-1afd963b7bab; idsrv=CfDJ8OcNnt_M7StKuxKmOCcYzCQz_Q_Q5eipRhNO1ubROIZMHsAcE9Zgyab6MxkEXkzc8zvOAFiqL-T8dxvlKNY8-g64WOke57eastjtlUKeTNAY6TBi4MWoQVveUdM-YiHV2UTn7AnAzT5xVKsv4IKe-pYBXPEkzAITaE579kjgMfVgZSE8gw93QWx4p1Q83X1g7EeqsGhZThM1J0h9a0l8_l3V-o3SXnY1GAywTH07hcsvUtQXxkGinFtIYC_sEqf_mIHegNKjfrh7bSELa9iTJ_8; idsrv-r-token=Dx8hCFPdunZGtRR1yO-mpljNXVGCE-CIVFMy7X4Z40R3a1qzdxf0XeNw2VU6; ta_visit_num=4; __P__wuid_visit_id=v1%3A0000001%3A1695468345077%3Aba1bb43f1b0943d4a823990633a07832; AMCV_A002FFD3544F6F0A0A4C98A5%40AdobeOrg=-1124106680%7CMCIDTS%7C19624%7CMCMID%7C14336354455774923280260418199989463140%7CMCOPTOUT-1695475545s%7CNONE%7CvVersion%7C5.2.0; __P__wuid_last_update_time=1695711734060; idsrv-a-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2OTU3NDA3NTQsImV4cCI6MTY5NTc0MTY1NCwiaXNzIjoiaHR0cHM6Ly90d29yay1xYS50Y3NiYW5rLnJ1L2F1dGgiLCJhdWQiOiJodHRwczovL3R3b3JrLXFhLnRjc2JhbmsucnUvYXV0aC9yZXNvdXJjZXMiLCJjbGllbnRfaWQiOiJXZWJvZmZpY2VDbGllbnQiLCJzdWIiOiJ2LmQub2xlbm5pa292IiwiYXV0aF90aW1lIjoxNjk1MTMyNjE1LCJpZHAiOiJsb2NhbCIsInVpZCI6IjEwOTg3NTUiLCJ1c2VyX2lkIjoiNDQ4ZTdmZmItM2IxZS00MmE1LTg1NzMtMWFmZDk2M2I3YmFiIiwidW5hbWUiOiJ2LmQub2xlbm5pa292IiwiZ2l2ZW5fbmFtZSI6ItCS0LDQtNC40LwiLCJmYW1pbHlfbmFtZSI6ItCe0LvQtdC90L3QuNC60L7QsiIsIm1pZGRsZV9uYW1lIjoi0JTQvNC40YLRgNC40LXQstC40YciLCJlbWFpbCI6InYuZC5vbGVubmlrb3ZAdGlua29mZi5ydSIsInRhZ3MiOiJXb2ZBZG1pblVzZXJSb2xlLHNtYXJ0X2Fzc2lzdGFudF9leHBlcnQiLCJtYXN0ZXJfaWQiOiIxNjA3NDAiLCJhZC5sb2dpbiI6InYuZC5vbGVubmlrb3YiLCJhZC5zaWQiOiJTLTEtNS0yMS0yNzU5MjUxMzIxLTM3OTI1OTQ5OTAtMjUzMzY5NDYxNS02OTgyMTUiLCJpYXQiOjE2OTU3NDA3NTQsInNjb3BlIjpbIm9wZW5pZCIsInByb2ZpbGUiLCJvZmZsaW5lX2FjY2VzcyJdLCJhbXIiOlsicHdkIl19.ZuQCMRtO2i9qRcFBFJholdn4l9HNmI7YJM466kg7B_g; idsrv-id-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2OTU3NDA3NTQsImV4cCI6MTY5NTgyNzE1NCwiaXNzIjoiaHR0cHM6Ly90d29yay1xYS50Y3NiYW5rLnJ1L2F1dGgiLCJhdWQiOiJXZWJvZmZpY2VDbGllbnQiLCJpYXQiOjE2OTU3NDA3NTQsImF0X2hhc2giOiJTZTQ2VF9sOTRKRkJtYmxjRkNfcVRBIiwic3ViIjoidi5kLm9sZW5uaWtvdiIsImF1dGhfdGltZSI6MTY5NTEzMjYxNSwiaWRwIjoibG9jYWwiLCJ1bmFtZSI6ImlkIiwiYW1yIjpbInB3ZCJdfQ.gXJGc999qJewTwu7-upDDZq8l-VS5M85Y2eIveWnd4U; vIdUid=625b2d12-f26b-45dc-ab90-bfeaedd06a1c; stLaEvTi=1695741418501; stSeStTi=1695741418501' \
+--header 'dnt: 1' \
+--header 'origin: https://strp-message-send.strp-message-send.internal.ya-ruc1-dev1.dev.k8s.tcsbank.ru' \
+--header 'pragma: no-cache' \
+--header 'referer: https://strp-message-send.strp-message-send.internal.ya-ruc1-dev1.dev.k8s.tcsbank.ru/' \
+--header 'sec-ch-ua: "Chromium";v="116", "Not)A;Brand";v="24", "Opera";v="102"' \
+--header 'sec-ch-ua-mobile: ?0' \
+--header 'sec-ch-ua-platform: "macOS"' \
+--header 'sec-fetch-dest: empty' \
+--header 'sec-fetch-mode: cors' \
+--header 'sec-fetch-site: same-origin' \
+--header 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36 OPR/102.0.0.0' \
+--form '="{
+  \"IntegrationId\": \"20230516125641662TDF300610\",
+  \"ApplicationProductType\": \"170001\",
+  \"CampaignIntegrationId\": \"V1214\",
+  \"Contact\": [
+    {
+      \"name\": \"IncomeType\",
+      \"value\": \"135000\",
+      \"currency\": \"RUR\",
+      \"frequency\": \"Ежемесячно\"
+    },
+    {
+      \"name\": \"contactCrmId\",
+      \"value\": \"3-3M8DFACF6\",
+      \"currency\": null,
+      \"frequency\": null
+    },
+    {
+      \"name\": \"applicantId\",
+      \"value\": \"20231202025620CM1387647240\",
+      \"currency\": null,
+      \"frequency\": null
+    }
+  ],
+  \"Product\": [
+    {
+      \"loyalty\": \"Bravo\",
+      \"value\": \"ALR\"
+    }
+  ],
+  \"ListOfFinsApplicationAdditionalFields\": [
+    {
+      \"Type\": \"Preapprove\",
+      \"name\": \"Amount\",
+      \"value\": \"1000000\"
+    },
+    {
+      \"Type\": \"Preapprove\",
+      \"name\": \"Vin\",
+      \"value\": \"XTAGFK110MY592028\"
+    },
+    {
+      \"Type\": \"Preapprove\",
+      \"name\": \"Make\",
+      \"value\": \"OPEL\"
+    },
+    {
+      \"Type\": \"Preapprove\",
+      \"name\": \"Model\",
+      \"value\": \"ASTRA\"
+    },
+    {
+      \"Type\": \"Preapprove\",
+      \"name\": \"Year\",
+      \"value\": \"2016\"
+    },
+    {
+      \"Type\": \"Preapprove\",
+      \"name\": \"SUBCHANNEL3\",
+      \"value\": \"CLN.DCC.RESCORE CAR APPL REJ.NO.0.NO.short\"
+    },
+    {
+      \"Type\": \"Preapprove\",
+      \"name\": \"scoring_strategy\",
+      \"value\": \"full_scoring\"
+    },
+    {
+      \"Type\": \"Preapprove\",
+      \"name\": \"RAI\",
+      \"value\": \"5-2YHUSIKIB\"
+    },
+    {
+      \"Type\": \"Preapprove\",
+      \"name\": \"offer_reason_source\",
+      \"value\": \"anl\"
+    },
+    {
+      \"Type\": \"Preapprove\",
+      \"name\": \"offer_reason_code\",
+      \"value\": \"no\"
+    },
+    {
+      \"Type\": \"Preapprove\",
+      \"name\": \"QueueTSales\",
+      \"value\": \"DAL Preapprove\"
+    },
+    {
+      \"Type\": \"Preapprove\",
+      \"name\": \"SegmentId\",
+      \"value\": \"COR ACTIVE\"
+    },
+    {
+      \"Type\": \"Preapprove\",
+      \"name\": \"PreapproveConfigVersion\",
+      \"value\": \"2\"
+    },
+    {
+      \"Type\": \"Preapprove\",
+      \"name\": \"Product1\",
+      \"value\": \"ALR.0!100\"
+    }
+  ]
+}"'
