@@ -31,9 +31,9 @@ for v, i in arr_sorted:
 print(res)
 
 # res = 0
-# for l in range(n):
-#     for r in range(l, n):
-#         res += min(arr[l: r + 1])
+# for left in range(n):
+#     for r in range(left, n):
+#         res += min(arr[left: r + 1])
 # print(res)
 
 # 300
