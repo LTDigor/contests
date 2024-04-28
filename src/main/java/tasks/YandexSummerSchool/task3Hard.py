@@ -48,7 +48,6 @@ def dijkstra(start, end):
 for u, v, t in reqs:
 
     dist = dijkstra(u, v)
-
     while dist > t and nxt_offer_id < k:
         ind, nu, nv, nt = offer[nxt_offer_id]
         graph[nu].append((nv, nt))
