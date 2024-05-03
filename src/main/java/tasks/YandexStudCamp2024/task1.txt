@@ -1,0 +1,9 @@
+SELECT a.AlbumId, a.Title, COUNT(t.TrackId), SUM(t.Milliseconds), SUM(t.Bytes)
+FROM Artist ar
+JOIN Album a
+ON ar.ArtistId = a.ArtistId
+JOIN Track t
+ON t.AlbumId = a.AlbumId
+WHERE ar.Name = $name
+GROUP BY a.AlbumId, a.Title
+ORDER BY a.AlbumId;
