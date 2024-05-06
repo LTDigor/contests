@@ -1,4 +1,4 @@
-package tasks.Tinkoff_Java_2023;
+package tasks.Tinkoff.Tinkoff_Java_2023;
 
 import java.util.HashMap;
 import java.util.Scanner;

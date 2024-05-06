@@ -1,4 +1,4 @@
-package tasks.tinkoff_cup;
+package tasks.Tinkoff.tinkoff_cup;
 
 import java.util.ArrayList;
 import java.util.HashSet;

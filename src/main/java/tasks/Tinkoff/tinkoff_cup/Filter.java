@@ -1,4 +1,4 @@
-package tasks.tinkoff_cup;
+package tasks.Tinkoff.tinkoff_cup;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;

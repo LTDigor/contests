@@ -1,4 +1,4 @@
-package tasks.yandexInternMeetup
+package tasks.Yandex.yandexInternMeetup
 
 import java.util.*
 import kotlin.math.min

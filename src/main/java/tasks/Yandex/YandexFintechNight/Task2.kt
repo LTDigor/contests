@@ -1,4 +1,4 @@
-package tasks.YandexFintechNight
+package tasks.Yandex.YandexFintechNight
 
 import java.util.*
 
