@@ -4,11 +4,11 @@
 
 using namespace std;
 
-// start from 0
-const ll mx_bit = 18;
+const ll mx_bit = 20;
 
 struct Node {
     Node *go[2];
+    ll cnt[2];
 };
 
 
@@ -20,45 +20,28 @@ void add_num(Node* root, ll num) {
         if (cur->go[bit] == nullptr) {
             cur->go[bit] = new Node();
         }
+        cur->cnt[bit] += 1;
         cur = cur->go[bit];
     }
 }
 
-void fxor(Node *cur, ll bit_num, ll num) {
-    if (cur == nullptr) return;
+ll mex(Node *root, ll xor_num) {
+    Node *cur = root;
 
-    if ((num >> bit_num) & 1) {
-        swap(cur->go[0], cur->go[1]);
+    ll res = 0;
+    for (ll i = mx_bit; i >= 0; i--) {
+        if (cur == nullptr) break;
+
+        ll bit = (xor_num >> i) & 1;
+        if (cur->cnt[bit] == (1 << i)) {
+            bit = bit ^ 1;
+            res += (1 << i);
+        }
+
+        cur = cur->go[bit];
     }
 
-    fxor(cur->go[0], bit_num - 1, num);
-    fxor(cur->go[1], bit_num - 1, num);
-}
-
-ll mex(Node *cur, ll bit_num) {
-    if (bit_num < 0) {
-        return -1;
-    }
-
-    if (cur->go[0] == nullptr) {
-        return 0;
-    }
-
-    ll left = mex(cur->go[0], bit_num - 1);
-    if (left != -1) {
-        return left;
-    }
-
-    if (cur->go[1] == nullptr) {
-        return 1 << bit_num;
-    }
-
-    ll right = mex(cur->go[1], bit_num - 1);
-    if (right != -1) {
-        return right + (1 << bit_num);
-    }
-
-    return -1;
+    return res;
 }
 
 signed main() {
@@ -69,15 +52,19 @@ signed main() {
 
     Node *root = new Node();
 
-    vll a(n);
+    unordered_set<ll> used;
     for (ll i = 0; i < n; i++) {
-        cin >> a[i];
-        add_num(root, a[i]);
+        ll x; cin >> x;
+        if (used.find(x) == used.end()) {
+            add_num(root, x);
+            used.insert(x);
+        }
     }
 
+    ll xor_num = 0;
     for (ll i = 0; i < m; i++) {
-        ll x = 1; cin >> x;
-        fxor(root, mx_bit, x);
-        cout << mex(root, mx_bit) << endl;
+        ll x; cin >> x;
+        xor_num = xor_num ^ x;
+        cout << mex(root, xor_num) << endl;
     }
 }
