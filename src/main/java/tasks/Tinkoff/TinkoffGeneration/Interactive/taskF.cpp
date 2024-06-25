@@ -9,7 +9,6 @@ signed main() {
 
     cout << "? 1 1 " << n << " " << n << endl;
     ll total; cin >> total;
-
     ll l, r;
 
     l = 1, r = n;
@@ -49,8 +48,6 @@ signed main() {
     cin >> w;
 
     ll h = total / w;
-
-
     cout << "! " << x_left << " " << y_left << " " << x_left + h - 1 << " " << y_left + w - 1 << endl;
     return 0;
 }
