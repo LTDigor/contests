@@ -12,12 +12,12 @@
 #     return pref
 #
 #
-# def kmp(p, t):
-#     pl = len(p)
+# def kmp(platform, t):
+#     pl = len(platform)
 #     tl = len(t)
 #
 #     answer = []
-#     pref = prefix_function(p + "#" + t)
+#     pref = prefix_function(platform + "#" + t)
 #
 #     for i in range(tl + 1):
 #         if pref[pl + i] == pl:

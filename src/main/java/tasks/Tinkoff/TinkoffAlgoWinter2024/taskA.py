@@ -1,6 +1,6 @@
 import math
 
-# n, p = map(int, input().split())
+# n, platform = map(int, input().split())
 n = int(input())
 p = 10 ** 9 + 7
 
