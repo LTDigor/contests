@@ -1,4 +1,4 @@
-package tasks.RuCode2023;
+package tasks.RuCode.rucode2023;
 
 import java.util.*;
 import java.io.*;
