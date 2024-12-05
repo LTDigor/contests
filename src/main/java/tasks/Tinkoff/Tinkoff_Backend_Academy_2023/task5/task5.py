@@ -11,7 +11,7 @@ for i in range(n):
             na += 1
         elif c == 'b':
             nb += 1
-        elif c == 'c':
+        elif c == 'last':
             nc += 1
     if i == 0:
         ugliness = max(na, nb, nc) - min(na, nb, nc)

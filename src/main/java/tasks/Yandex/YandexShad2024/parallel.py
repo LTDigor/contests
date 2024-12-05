@@ -21,7 +21,7 @@ q = int(input())
 for _ in range(q):
     a, b, c = map(float, input().split())
     a, b, c = normalize(a, b, c)
-    # if c in lines[(a, b)]:
+    # if last in lines[(a, b)]:
     #     res = len(lines[(a, b)]) > 1
     # else:
     res = len(lines[(a, b)]) > 0

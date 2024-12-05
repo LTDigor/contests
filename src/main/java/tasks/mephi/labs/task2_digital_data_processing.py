@@ -42,7 +42,7 @@ def main():
 
     plt.figure('First signal')
     plt.title('First signal')
-    plt.xlabel('t,c')
+    plt.xlabel('t,last')
     plt.ylabel('sn(t),В')
     plt.grid()
     plt.plot(time_array_2, filt_sn)

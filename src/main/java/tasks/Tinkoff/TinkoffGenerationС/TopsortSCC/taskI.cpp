@@ -3,7 +3,7 @@
 
 using namespace std;
 
-vector<vector<ll>> graph;
+vector<vector<ll>> graph, color;
 vector<vector<bool>> visited;
 vector<pair<ll, ll>> topsort;
 vector<pair<ll, ll>> diff = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
@@ -16,11 +16,23 @@ void dfs(ll x, ll y) {
         if (nx >= n || nx < 0 || ny >= m || ny < 0) {
             continue;
         }
-        if (!visited[nx][ny] && graph[nx][ny] <= graph[x][y])
+        if (!visited[nx][ny] && graph[nx][ny] >= graph[x][y])
             dfs(nx, ny);
     }
 
     topsort.push_back({x, y});
+}
+
+void dfs_colors(ll x, ll y, ll c) {
+    color[x][y] = c;
+    for (auto [dx, dy] : diff) {
+        ll nx = x + dx, ny = y + dy;
+        if (nx >= n || nx < 0 || ny >= m || ny < 0) {
+            continue;
+        }
+        if (color[nx][ny] == -1 && graph[nx][ny] >= graph[x][y])
+            dfs_colors(nx, ny, c);
+    }
 }
 
 int main() {
@@ -29,6 +41,7 @@ int main() {
     cin >> n >> m;
 
     visited.resize(n, vector<bool>(m, false));
+    color.resize(n, vector<ll>(m, -1));
     graph.resize(n, vector<ll>(m, 0));
 
     for (ll i = 0; i < n; i++) {
@@ -47,25 +60,16 @@ int main() {
             }
         }
     }
+    reverse(topsort.begin(), topsort.end());
 
-    ll res = 0;
-    visited = vector<vector<bool>>(n, vector<bool>(m, false));
-    for (ll i = 0; i < n; i++) {
-        auto [x, y] = topsort[n - 1 - i];
-        visited[x][y] = true;
-        for (auto [dx, dy] : diff) {
-            ll nx = x + dx, ny = y + dy;
-            if (nx >= n || nx < 0 || ny >= m || ny < 0) {
-                continue;
-            }
-            if (visited[nx][ny] && graph[nx][ny] <= graph[x][y]) {
-                res++;
-                break;
-            }
+    ll c = 0;
+    for (auto [x, y] : topsort) {
+        if (color[x][y] == -1) {
+            dfs_colors(x, y, c++);
         }
     }
 
-    cout << res << endl;
+    cout << c << endl;
 
     return 0;
 }
