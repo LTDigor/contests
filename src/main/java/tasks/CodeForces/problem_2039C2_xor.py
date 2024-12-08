@@ -62,46 +62,6 @@ def count_res(x, m):
 
     return res
 
-
-def naive(x, m):
-    # divisible by x
-    p = m - m % x
-    ans = p // x - (1 if x < p else 0)
-    if 1 <= (x ^ p) <= m:
-        ans += 1
-    p += x
-    if 1 <= (x ^ p) <= m:
-        ans += 1
-
-    # divisibly by y
-    for y in range(1, min(x, m) + 1):
-        cur = x ^ y
-        if cur % y == 0:
-            ans += 1
-
-    # divisible by both
-    if x <= m:
-        ans -= 1
-
-    return ans
-
-
-def test(r=1):
-    for x in range(3, 5):
-        for pw in range(54, 65):
-            m = 1 << pw
-            check(x, m - 1)
-            check(x, m)
-            check(x, m + 1)
-            # print(x, m)
-
-
-def check(x, m):
-    a, b = naive(x, m), count_res(x, m)
-    if a != b:
-        print("x = ", x, "m = ", m, "expected = ", a, "actual = ", b)
-
-
 def solve():
     t = int(input())
     for _ in range(t):
